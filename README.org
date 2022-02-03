@@ -1,0 +1,40 @@
+#+title: comment-block
+
+Simple string based block (multi-line) elisp comments.
+
+*comment-block* is an Emacs package for providing a very simple way of including
+string based multi-line comments in elisp.
+
+Emacs Lisp does not have multiline comments.
+
+Emacs lisp has multiline string literals, but they're delimited simply by
+"...", so you can't use them to make a block of code inert if that block
+contains ordinary string literals. Given that limitation, if you were to
+include a comment as a string in your code, It would be good if could make
+it clear that we are looking at a comment, not a string. This is what we do
+here: (cmnt-begin "Some Comment" cmnt-end).
+
+With polymode, we now can include org-mdoe text inside of our elisp code.
+This is the inverse of literate programming. We call it:
+COMEEGA (Collaborative Org-Mode Enhanced Emacs Generalized Authorship).
+To accommodate COMEEGA, we also provide  orgCmntBegin/orgCmntEnd.
+These trigger org-mode regions in your polymode elisp code.
+See the comeega package for details.
+
+All of this is just a temporary band-aid solution that needs to be properly
+addressed in elisp.
+
+- Scheme has #| some comment |#  --- Which is great!
+- Common Lisp has by each character macro read model, on top of which we can do
+  the equivalent of here-documents --- Which is great!
+
+But AFAIK, there is no clean solution for block comments in elisp.
+Anybody listening? Or am I missing something?
+My wish list includes: addition of macro character read model to elisp.
+
+So, in the meantime, we can have this.
+
+Imagine this: We could standardize on the "Commentary:" and all of the above
+being in sub org-mode with all kinds of links to other modules in
+poly-emacs-lisp-mode. And all of our doc-strings could be in rich org-mode.
+See comeega examples for details.
