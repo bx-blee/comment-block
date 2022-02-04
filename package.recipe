@@ -1,1 +1,4 @@
-(comment-block :repo "bx-blee/comment-block" :fetcher github)
+(comment-block
+  :fetcher github
+  :repo "bx-blee/comment-block"
+  :files ("comment-block.el"))

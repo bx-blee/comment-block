@@ -1,4 +1,4 @@
-;;; comment-block.el -- Elisp Block Comments. -*- Mode: Emacs-Lisp; lexical-binding: t; -*-
+;;; comment-block.el --- Elisp Block Comments -*- Mode: Emacs-Lisp; lexical-binding: t; -*-
 ;;
 ;; Copyright (C) 2021-2022 Mohsen BANAN - http://mohsen.1.banan.byname.net/contact
 ;;
@@ -8,7 +8,7 @@
 ;; Keywords: languages lisp
 ;; Homepage: https://github.com/bx-blee/comment-block
 ;; Package-Requires: ((emacs "24.3"))
-;; Package-Requires: 0.1
+;; Package-Version: 0.1
 ;;
 ;; This file is not part of GNU Emacs.
 ;; This file is part of Blee (ByStar Libre-Halaal Emacs Environment).
@@ -24,7 +24,7 @@
 ;;
 ;;  Emacs Lisp doesn't have multiline comments.
 ;;
-;;  Emacs lisp has multiline string literals, but they're delimited simply by
+;;  Emacs Lisp has multiline string literals, but they're delimited simply by
 ;;  "...", so you can't use them to make a block of code inert if that block
 ;;  contains ordinary string literals. Given that limitation, if you were to
 ;;  include a comment as a string in your code, It would be good if could make
