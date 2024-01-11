@@ -32,7 +32,54 @@ But AFAIK, there is no clean solution for block comments in elisp.
 Anybody listening? Or am I missing something?
 My wish list includes: addition of macro character read model to elisp.
 
-So, in the meantime, we can have this.
+So, in the meantime, we can use *cmnt-begin* and *cmnt-end*,
+
+#+begin_src elisp
+(defvar cmnt-end nil "Elisp Comment End.")
+(defun cmnt-begin (comment commentEnd))
+#+end_src
+
+Which can be used like so:
+
+#+begin_src elisp
+(cmnt-begin "
+This is an example of multi-line comment (but not in org-mode).
+Example usage is:
+(cmnt-begin  \"multi-line comment comes here.\" cmnt-end)
+
+I wish elisp had a here-document facility. Like common-lisp.
+Anybody listening?
+" cmnt-end)
+#+end_src
+
+With the org-mode oriented variation being:
+
+#+begin_src elisp
+(defvar orgCmntEnd nil "Elisp Org Comment End.")
+(defun orgCmntBegin (comment commentEnd))
+#+end_src
+
+Which can be used like so:
+
+-------------
+
+(orgCmntBegin "
+*  This is an example of multi-line comment in *org-mode* format.
+** Here is an example of a link [[http://www.by-star.net]]
+
+* orgCmntBegin/End is used in _COMEEGA_
+(Collaborative Org-Mode Enhanced Emacs Generalized Authorship)
+
+Which in turn allows us to switch between
+comeega:poly-emacs-lisp-mode or emacs-lisp-mode and org-mode. So,
+if you are reading this in comeega:poly-emacs-lisp-mode, right
+here you would be org-mode not emacs-lisp-mode.
+
+It is '(orgCmntBegin' and 'orgCmntEnd)' that trigger org-mode in
+comeega:poly-emacs-lisp-mode.
+" orgCmntEnd)
+
+---------
 
 Imagine this: We could standardize on the "Commentary:" and all of the above
 being in sub org-mode with all kinds of links to other modules in
